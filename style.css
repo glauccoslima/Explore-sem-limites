@@ -1,0 +1,446 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+:root {
+  font-size: 62.5%;
+  --h1-h3-color: #B52184;
+  --pcont-color: #312D64;
+  --gradient-background: linear-gradient(96deg, #343193 0%, #302C63 99.68%);
+  --white-color: #FFF;
+  --background-color: #F9F4FB;
+}
+
+/* Define a fonte padrão para elementos html, body e input. */
+html,
+body,
+input,
+button,
+textarea {
+  font-family: "Mulish", sans-serif;
+}
+
+/* Estrutura principal da página utilizando display grid. */
+#container {
+  display: grid;
+  grid-template-rows: max-content 1fr max-content;
+  /* Divide o layout em cabeçalho, conteúdo principal e rodapé. */
+  height: 100vh;
+  /* Ocupa a altura total da viewport. */
+}
+
+#container {
+  max-width: 100%;
+  margin: 0 auto;
+  background: var(--background-color);
+}
+
+#contact {
+  background: var(--background-color);
+}
+
+.top-image {
+  max-width: 100%;
+  padding: 0 3.4rem 1.7rem 3.2rem;
+}
+
+h1 {
+  color: var(--h1-h3-color);
+  text-align: center;
+  font-size: 3.2rem;
+  font-weight: 900;
+  margin-bottom: .5rem;
+}
+
+main p {
+  color: var(--pcont-color);
+  text-align: center;
+  font-size: 2.0rem;
+  font-weight: 600;
+  margin-bottom: 3.5rem;
+}
+
+.arrow-button {
+  display: flex;
+  margin: 0 auto;
+  margin-bottom: 9.3rem;
+}
+
+.hero-text {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: slideUpText 2s 0.5s ease-out forwards;
+}
+
+@keyframes slideUpText {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.arrow-button {
+  transition: transform 0.3s ease;
+  /* Suaviza a transição - pode ser removido se a animação for contínua */
+  animation: pulseArrowDown 1s ease-in-out infinite;
+  /* Aplica a animação continuamente */
+}
+
+@keyframes pulseArrowDown {
+  0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(3px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.hero-img .top-image {
+  opacity: 0;
+  transform: scale(1.1);
+  animation: fadeInScale 2s ease-out forwards;
+}
+
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(1.1);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.card {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 2s ease-out forwards;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+#contact {
+  opacity: 0;
+  transform: translateY(50px);
+  animation: fadeInUpContact 2s ease-out forwards;
+}
+
+@keyframes fadeInUpContact {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+footer {
+  --startY: 100%;
+  /* Posição inicial da animação do rodapé, vindo de 100% abaixo. */
+  animation: move .2s;
+}
+
+@keyframes move {
+  from {
+    transform: translateY(var(--startY));
+    /* Inicia a animação a partir da posição definida pela variável --startY. */
+  }
+
+}
+
+#cards {
+  background: var(--gradient-background);
+  padding: 5.3rem 3.9rem 4.9rem;
+  display: grid;
+  gap: 4.9rem;
+}
+
+#cards .card {
+  background: var(--white-color);
+  padding: 2.6rem;
+  border-radius: 2rem;
+}
+
+.card img {
+  width: 8.0rem;
+  height: 8.0rem;
+  margin-bottom: 3.3rem;
+}
+
+.card h3 {
+  color: var(--h1-h3-color);
+  font-size: 2.9rem;
+  font-weight: 900;
+  margin-bottom: 1.9rem;
+}
+
+.card p {
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: var(--pcont-color);
+  width: 26.5rem;
+}
+
+#contact {
+  width: 100%;
+  height: 100%;
+  padding: 7.8rem 3.9rem 6.5rem 4.3rem;
+}
+
+/* Form */
+button,
+input,
+fieldset,
+textarea {
+  border: none;
+  background: none;
+}
+
+form h3 {
+  color: var(--h1-h3-color);
+  font-size: 3.2rem;
+  font-weight: 900;
+  padding: 1.0rem 0 4.3rem;
+
+}
+
+#contact form .input-wrapper {
+  margin-bottom: 2.4rem;
+}
+
+#contact form input,
+#contact form textarea {
+  width: 100%;
+  border: 0.15rem solid var(--pcont-color);
+  border-radius: 1.6rem;
+  padding-top: 1.2rem;
+  padding-bottom: 1.2rem;
+  color: var(--pcont-color);
+  font-weight: 600;
+  font-size: 1.6rem;
+}
+
+input#name {
+  padding-left: 5rem;
+}
+
+input#email {
+  padding-left: 5rem;
+}
+
+textarea#message {
+  padding: 1.2rem 1.6rem 1.6rem 1.6rem
+}
+
+#contact form textarea {
+  height: 12.6rem;
+}
+
+#contact form input::placeholder,
+#contact form textarea::placeholder {
+  color: var(--pcont-color);
+  font-weight: 600;
+  font-size: 1.6rem;
+}
+
+#contact form button {
+  background: var(--gradient-background);
+  color: var(--white-color);
+  font-size: 1.4rem;
+  font-weight: 700;
+  line-height: 2.4rem;
+  padding: 1rem 1.6rem;
+  border-radius: 1.6rem;
+  cursor: pointer;
+  transition: filter 200ms;
+}
+
+#contact form button:hover {
+  filter: brightness(0.9);
+}
+
+#name {
+  background: url(./assets/person.svg) no-repeat scroll 1.4rem 1.2rem;
+}
+
+#email {
+  background: url(./assets/at.svg) no-repeat scroll 1.4rem 1.2rem;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip: rect(0, 0, 0, 0);
+  overflow: hidden;
+  clip-path: inset(50%);
+}
+
+#contact .input-wrapper input:hover,
+#contact .input-wrapper input:focus,
+#contact .input-wrapper textarea:hover,
+#contact .input-wrapper textarea:focus {
+  border: none;
+  outline: 3px solid var(--pcont-color);
+}
+
+#contact .star {
+  display: none;
+}
+
+/* Footer Section */
+footer {
+  background: var(--gradient-background);
+
+  padding: 3.2rem 1.6rem;
+}
+
+footer p {
+  color: var(--white-color);
+  font-size: 1.9rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+@media (min-width: 1024px) {
+  #container {
+    height: 100%;
+    grid-template-areas:
+      "hero"
+      "cards"
+      "contact"
+      "footer";
+  }
+
+  #hero {
+    grid-area: hero;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "hero-text hero-img";
+    align-items: center;
+    gap: 2.8rem;
+    margin-right: 2.9rem;
+    margin-bottom: 10.3rem;
+  }
+
+  #hero .hero-img {
+    grid-area: hero-img;
+  }
+
+  #hero .hero-text {
+    grid-area: hero-text;
+  }
+
+  #cards {
+    grid-area: cards;
+    grid-template-columns: 1fr 1fr 1fr;
+    padding: 6.4rem 11.1rem;
+    gap: 6.0rem;
+  }
+
+  #contact {
+    grid-area: contact;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "form star";
+    align-items: center;
+    gap: 9.2rem;
+  }
+
+  #contact form {
+    grid-area: form;
+  }
+
+  #contact .star {
+    grid-area: star;
+    display: grid;
+    justify-content: flex-end;
+  }
+
+  footer {
+    grid-area: footer;
+  }
+
+  .top-image {
+    padding: 0;
+    width: 95rem;
+    height: 75rem;
+  }
+
+  .hero-text {
+    padding-top: 31.2rem;
+    padding-left: 10.9rem;
+    text-align: left;
+  }
+
+  h1 {
+    font-size: 5.8rem;
+    margin-bottom: .8rem;
+    text-align: start;
+  }
+
+  main p {
+    font-size: 3.2rem;
+    text-align: start;
+  }
+
+  .card img {
+    width: 9.7rem;
+    height: 9.7rem;
+    margin-bottom: 4.0rem;
+  }
+
+  .card p {
+    font-size: 1.9rem;
+    font-weight: 600;
+    width: 46.5rem
+  }
+
+  .card h3 {
+    font-size: 3rem;
+    margin-bottom: 2.4rem;
+  }
+
+  #cards .card {
+    padding: 3.2rem 0 7.2rem 3.2rem;
+
+  }
+
+  #contact {
+    padding: 0 0 0 11.2rem;
+  }
+
+  .arrow-button {
+    margin: 0;
+    justify-content: flex-start;
+    padding-top: 11.9rem;
+  }
+}
